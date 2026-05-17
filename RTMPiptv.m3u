@@ -1,7 +1,4 @@
 #EXTINF:-1 tvg-id="AmmanTV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1754665306_amman%20tv%20png%20logo.png" tvg-region="Salem" group-title="PLC",Amman TV HD
-#KODIPROP:inputstream=inputstream.ffmpegdirect
-#KODIPROP:inputstream.ffmpegdirect.mime_type=video/rtmp
-#KODIPROP:inputstream.ffmpegdirect.open_options=mediacodec=0|probesize=102400|analyzeduration=5000000|framedrop=1
 rtmp://103.155.33.67:1935/live/ammantv
 
 
