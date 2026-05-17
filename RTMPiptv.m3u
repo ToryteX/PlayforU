@@ -1,0 +1,59 @@
+
+
+
+#EXTINF:-1 tvg-id="AmmanTV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1754665306_amman%20tv%20png%20logo.png" tvg-region="Salem" group-title="PLC",Amman TV HD
+rtmp://103.155.33.67:1935/live/ammantv
+
+#EXTINF:-1 tvg-id="AmmanPlus" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1764597422_WhatsApp%20Image%202025-12-01%20at%206.44.54%20PM.png" tvg-region="Salem" group-title="PLC",Amman Plus HD
+rtmp://103.155.33.67:1935/live/ammantvplus
+
+#EXTINF:-1 tvg-id="AnandamTV3" tvg-logo="https://www.ashokadigital.net/_next/image?url=https%3A%2F%2Flivetv.ashokadigital.net%2Fupload%2Flogo%2F1746452472_lo.png&w=1920&q=75" group-title="TAMIL NADU LOCAL BY TWC",Anandam TV SD
+rtmp://in-2.castr.io/static/live_a617dda0c02c11eeb02035c643a92b1e
+
+#EXTINF:-1 tvg-id="AnandamAbiTV" tvg-logo="" group-title="TAMIL NADU LOCAL BY TWC",Anandam Abi TV SD
+rtmp://in-2.castr.io/static/live_40fb69e0107211f0adde2f394a2bbc0f
+
+#EXTINF:-1 tvg-id="AdvikaTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/AdvikaTV.png" tvg-region="Madurai" group-title="PLC",Advika TV HD
+rtmp://stream.advikadigital.in/advika/advika
+
+#EXTINF:-1 tvg-id="SSMusic" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/SSMusic.png" tvg-region="Madurai" group-title="Music",SS Music HD
+rtmp://stream.advikadigital.in/advika/ssmusic
+
+#EXTINF:-1 tvg-id="SreeSaravanaaTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/SriSaravana.png" tvg-region="Madurai" group-title="PLC",Sree Saravanaa TV
+rtmp://stream.advikadigital.in/advika/saravana
+
+#EXTINF:-1 tvg-id="Veerbox" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/Veerbox.png" tvg-region="Madurai" group-title="PLC",Veerbox HD
+rtmp://stream.advikadigital.in/advika/veerbox
+
+#EXTINF:-1 tvg-id="MonTamil" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/MonTamil.png" tvg-region="Canada" group-title="International",MonTamil
+rtmp://148.113.170.17/static/montamil
+
+#EXTINF:-1 tvg-id="AnalaiMusic" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/AnalaiMusic.png" tvg-region="Canada" group-title="International;Music",Analai Music
+rtmp://148.113.170.17/static/analaimusic
+
+#EXTINF:-1 tvg-id="IthazhTV" tvg-logo="https://play-lh.googleusercontent.com/WOVl9OoVhMuStsl6ws9HTXQZrQgk__GjErulmJpy7JnCxOp0yDc5e0SThZ5lIF87xrY" tvg-region="Unknown" group-title="PLC",Ithazh TV
+rtmp://148.113.170.17/static/ithal
+
+#EXTINF:-1 tvg-id="MurugaTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/MurugaTV.png" tvg-region="Puducherry" group-title="PLC",Muruga TV
+rtmp://103.136.136.77:1935/muruga4k/muruga4k?psk=123456
+
+#EXTINF:-1 tvg-id="BoovaTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/BoovaTV.png" tvg-region="Unknown" group-title="PLC",Boova TV
+rtmp://103.136.136.77:1935/boova4k/boova4k?psk=123456
+
+#EXTINF:-1 tvg-id="CSTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/CSTV.png" tvg-region="Unknown" group-title="Movies",CS TV
+rtmp://103.136.136.77:1935/cs4k/cs4k?psk=123456
+
+#EXTINF:-1 tvg-id="KaniTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/KaniTV.png" tvg-region="Unknown" group-title="PLC",Kani TV
+rtmp://103.136.136.77:1935/kanitv/kanitv?psk=123456
+
+#EXTINF:-1 tvg-id="MCNChennai" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/MCN.png" tvg-region="Chennai" group-title="PLC",MCN Chennai
+rtmp://103.136.136.77:1935/tvr/tvr?psk=123456
+
+#EXTINF:-1 tvg-id="CityTVPondy" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/CityTVPondy.png" tvg-region="Chennai;Puducherry" group-title="PLC",City TV Puducherry
+rtmp://103.136.136.77:1935/citytv/citytv?psk=123456
+
+#EXTINF:-1 tvg-id="KLTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/KLTV.png" tvg-region="Karaikal;Puducherry" group-title="PLC",KL TV
+rtmp://103.136.136.77:1935/kl4k/kl4k?psk=123456
+
+#EXTINF:-1 tvg-id="JSPTV" tvg-logo="" tvg-region="Puducherry" group-title="PLC",JSP TV
+rtmp://103.136.136.77:1935/jsp4k/jsp4k?psk=123456

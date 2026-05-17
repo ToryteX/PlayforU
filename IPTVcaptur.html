@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live IPTV Playlist Player</title>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #141414;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Channel List */
+        .sidebar {
+            width: 320px;
+            background: #1f1f1f;
+            display: flex;
+            flex-direction: column;
+            border-right: 2px solid #2d2d2d;
+        }
+        .sidebar h3 {
+            padding: 15px;
+            margin: 0;
+            background: #111;
+            border-bottom: 1px solid #2d2d2d;
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        .channel-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .channel-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #2a2a2a;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .channel-item:hover {
+            background: #3a3a3a;
+        }
+        .channel-item.active {
+            background: #00bcd4;
+        }
+        .channel-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            object-fit: contain;
+            background: #111;
+            margin-right: 12px;
+        }
+        .channel-name {
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Main Video Player Layout */
+        .main-viewer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            position: relative;
+        }
+        .video-container {
+            width: 85%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-js {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Status Display */
+        #status-message {
+            position: absolute;
+            top: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #00bcd4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3>📺 IPTV CHANNELS</h3>
+        <div id="channels" class="channel-list">
+            <p style="text-align:center;color:#888;">Loading playlist links...</p>
+        </div>
+    </div>
+
+    <div class="main-viewer">
+        <div id="status-message">Initializing Player...</div>
+        <div class="video-container">
+            <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto">
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Setup Video.js Player instance
+        const player = videojs('my-video');
+        const playlistUrl = 'https://server.lrl45.workers.dev/channel/raw?=m3u';
+        const statusMsg = document.getElementById('status-message');
+
+        // 1. Fetch Playlist Link Data Code
+        async function fetchPlaylist() {
+            try {
+                statusMsg.textContent = "Fetching playlist data...";
+                const response = await fetch(playlistUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP network error! Status: ${response.status}`);
+                }
+                
+                const rawM3uData = await response.text();
+                statusMsg.textContent = "Parsing channels...";
+                const channels = parseM3U(rawM3uData);
+                
+                renderChannels(channels);
+                statusMsg.textContent = `Loaded ${channels.length} channels successfully.`;
+            } catch (error) {
+                console.error("Failed to load playlist:", error);
+                statusMsg.style.color = "#ff3333";
+                statusMsg.textContent = "CORS Error or Dead Link. Cannot load playlist data.";
+                document.getElementById('channels').innerHTML = `<p style="color:#ff3333; padding:15px;">Failed to capture link data. The server may be blocking external requests (CORS restriction).</p>`;
+            }
+        }
+
+        // 2. Parse Code: Extracting Name, Logo, and URL
+        function parseM3U(data) {
+            const lines = data.split('\n');
+            const channels = [];
+            let currentChannel = null;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+
+                if (line.startsWith('#EXTINF:')) {
+                    // Extract logo and name via RegEx
+                    const logoMatch = line.match(/tvg-logo="([^"]*)"/);
+                    const commaIdx = line.lastIndexOf(',');
+                    const fallbackName = commaIdx !== -1 ? line.substring(commaIdx + 1).trim() : "Unnamed Channel";
+
+                    currentChannel = {
+                        name: fallbackName,
+                        logo: logoMatch ? logoMatch[1] : 'https://via.placeholder.com/40/222/fff?text=TV',
+                        url: ''
+                    };
+                } else if (line.startsWith('http')) {
+                    if (currentChannel) {
+                        currentChannel.url = line;
+                        channels.push(currentChannel);
+                        currentChannel = null;
+                    }
+                }
+            }
+            return channels;
+        }
+
+        // 3. Render Code: Generate UI List Elements
+        function renderChannels(channels) {
+            const container = document.getElementById('channels');
+            container.innerHTML = ''; // Clear loading text
+
+            if(channels.length === 0) {
+                container.innerHTML = '<p style="padding:15px;color:#aaa;">No channels found in playlist.</p>';
+                return;
+            }
+
+            channels.forEach((channel, index) => {
+                const div = document.createElement('div');
+                div.className = 'channel-item';
+                div.innerHTML = `
+                    <img class="channel-logo" src="${channel.logo}" onerror="this.src='https://via.placeholder.com/40/222/fff?text=TV'" alt="logo">
+                    <div class="channel-name">${channel.name}</div>
+                `;
+
+                // Handle click to change video stream channel src
+                div.addEventListener('click', () => {
+                    // Update active styling
+                    document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+                    div.classList.add('active');
+
+                    // Play stream url
+                    playStream(channel.url, channel.name);
+                });
+
+                container.appendChild(div);
+            });
+        }
+
+        // 4. View Stream Action
+        function playStream(url, name) {
+            statusMsg.style.color = "#00bcd4";
+            statusMsg.textContent = `Connecting to: ${name}...`;
+            
+            // Set dynamic player type source based on stream protocol
+            let type = 'application/x-mpegURL'; // Standard for .m3u8 HLS
+            if (url.endsWith('.mp4')) type = 'video/mp4';
+
+            player.src({ src: url, type: type });
+            player.ready(() => {
+                player.play().catch(err => {
+                    statusMsg.style.color = "#ff3333";
+                    statusMsg.textContent = `Playback error on: ${name}`;
+                });
+            });
+        }
+
+        // Start initialization process on page boot
+        fetchPlaylist();
+    </script>
+</body>
+</html>
