@@ -1,5 +1,6 @@
 #EXTINF:-1 tvg-id="AmmanTV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1754665306_amman%20tv%20png%20logo.png" tvg-region="Salem" group-title="PLC",Amman TV HD
-intent://103.155.33.67:1935/live/ammantv#Intent;scheme=rtmp;package=com.genuine.leone;type=video/*;end
+intent://103.155.33.67:1935/live/ammantv
+#Intent;scheme=rtmp;package=com.genuine.leone;type=video/*;end
 
 
 #EXTINF:-1 tvg-id="AmmanPlus" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1764597422_WhatsApp%20Image%202025-12-01%20at%206.44.54%20PM.png" tvg-region="Salem" group-title="PLC",Amman Plus HD
