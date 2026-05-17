@@ -1,5 +1,10 @@
-#EXTINF:-1 tvg-id="AmmanTV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1754665306_amman%20tv%20png%20logo.png" tvg-region="Salem" group-title="PLC" target="external" package="com.genuine.leone",Amman TV HD
+#EXTINF:-1 tvg-id="AmmanTV" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1754665306_amman%20tv%20png%20logo.png" tvg-region="Salem" group-title="PLC",Amman TV HD
+#KODIPROP:inputstream=inputstream.ffmpegdirect
+#KODIPROP:inputstream.ffmpegdirect.mime_type=video/rtmp
+#KODIPROP:inputstream.ffmpegdirect.is_rtmp=true
+#KODIPROP:inputstream.ffmpegdirect.open_options=mediacodec=0|probesize=204800|analyzeduration=8000000|skip_loop_filter=all
 rtmp://103.155.33.67:1935/live/ammantv
+
 
 #EXTINF:-1 tvg-id="AmmanPlus" tvg-logo="https://livetv.ashokadigital.net/upload/logo/1764597422_WhatsApp%20Image%202025-12-01%20at%206.44.54%20PM.png" tvg-region="Salem" group-title="PLC",Amman Plus HD
 rtmp://103.155.33.67:1935/live/ammantvplus
