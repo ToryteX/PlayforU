@@ -63,3 +63,10 @@ rtmp://103.136.136.77:1935/jsp4k/jsp4k?psk=123456
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://alex4528.site/jplus/license
 https://alex4528.site/jplus/O1LLO0I1oOOLii0IO1i1ii/manifest.mpd
+
+KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://tplay.virey40690.workers.dev/key/521
+#EXTINF:-1 tvg-id="521" catchup-type="append" catchup-days="8" catchup-source="&begin={utc}&end={utcend}" group-title="TATA PLAY ▶ | Tamil" tvg-logo="https://mediaready.videoready.tv/tatasky-epg/image/fetch/f_auto,fl_lossy,q_auto,h_250,w_250/https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11960-j9lu9vow-v1/imageContent-11960-j9lu9vow-m1.png",Sun TV HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36
+#EXTHTTP:{"cookie":"hdntl=exp=1778984920~acl=%2fbpk-tv%2firdeto_com_Channel_760%2foutput%2f*~id=9441230843~data=hdntl~hmac=01c7f95576636e92601e5a65fce787be8d36365fc375b7e6d70e551b07479e46"}
+https://bpaita3.akamaized.net/bpk-tv/irdeto_com_Channel_760/output/manifest.mpd
