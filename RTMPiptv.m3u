@@ -54,3 +54,12 @@ rtmp://103.136.136.77:1935/kl4k/kl4k?psk=123456
 
 #EXTINF:-1 tvg-id="JSPTV" tvg-logo="" tvg-region="Puducherry" group-title="PLC",JSP TV
 rtmp://103.136.136.77:1935/jsp4k/jsp4k?psk=123456
+
+
+
+
+#EXTINF:-1 group-title="JioTv+ Kids" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Hungama.png" group-logo="https://sflex07.fun/Logo/Jio.png",Hungama
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://alex4528.site/jplus/license
+https://alex4528.site/jplus/O1LLO0I1oOOLii0IO1i1ii/manifest.mpd
