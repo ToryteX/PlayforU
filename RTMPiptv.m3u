@@ -1,7 +1,7 @@
 #EXTM3U refresh="3600"
 
 #EXTINF:-1 tvg-id="welcome" tvg-name="Welcome" group-title="WELCOME",⭐ Welcome
-https://github.com/ToryteX/PlayforU/raw/refs/heads/main/204083-923169420.mp4
+#EXTVLCOPT:input-slave=https://github.com/ToryteX/PlayforU/raw/refs/heads/main/204083-923169420.mp4
 
 
 
@@ -27,6 +27,7 @@ rtmp://stream.advikadigital.in/advika/advika
 rtmp://stream.advikadigital.in/advika/ssmusic
 
 #EXTINF:-1 tvg-id="SreeSaravanaaTV" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/SriSaravana.png" tvg-region="Madurai" group-title="PLC",Sree Saravanaa TV
+#EXTVLCOPT:input-slave=https://github.com/ToryteX/PlayforU/raw/refs/heads/main/204083-923169420.mp4
 rtmp://stream.advikadigital.in/advika/saravana
 
 #EXTINF:-1 tvg-id="Veerbox" tvg-logo="https://raw.githubusercontent.com/amazeyourself/tamil-local-iptv/refs/heads/main/logos/Veerbox.png" tvg-region="Madurai" group-title="PLC",Veerbox HD
