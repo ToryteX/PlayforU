@@ -1,0 +1,7 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:999
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:30.0,
+https://raw.githubusercontent.com/PlayForU-4K/iptv-playlist-protected/main/disclaimer/disclaimer.mp4
+#EXT-X-ENDLIST
