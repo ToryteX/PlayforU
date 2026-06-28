@@ -2,6 +2,6 @@
 #EXT-X-VERSION:3
 #EXT-X-TARGETDURATION:10
 #EXT-X-MEDIA-SEQUENCE:0
-#EXTINF:10.0,Disclaimer Video
-https://cdn.jsdelivr.net/gh/ToryteX/PlayforU@main/lv_0_20260604174002.ts
+#EXTINF:10.0,welcome Video
+https://raw.githubusercontent.com/ToryteX/PlayforU/refs/heads/main/Disclaimer/welcome2.ts
 #EXT-X-ENDLIST
