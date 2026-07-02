@@ -2,6 +2,6 @@
 #EXT-X-VERSION:3
 #EXT-X-TARGETDURATION:14
 #EXT-X-MEDIA-SEQUENCE:0
-#EXTINF:10.0,welcome Video
+#EXTINF:14.0,Server down Video
 https://raw.githubusercontent.com/ToryteX/PlayforU/refs/heads/main/Disclaimer/Error.ts
 #EXT-X-ENDLIST
