@@ -2,6 +2,6 @@
 #EXT-X-VERSION:3
 #EXT-X-TARGETDURATION:8
 #EXT-X-MEDIA-SEQUENCE:0
-#EXTINF:10.0,expired Video
+#EXTINF:8.0,expired Video
 https://raw.githubusercontent.com/ToryteX/PlayforU/refs/heads/main/Disclaimer/expried.ts
 #EXT-X-ENDLIST
